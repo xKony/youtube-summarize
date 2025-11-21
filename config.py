@@ -4,6 +4,6 @@
 PROMPT_FILE = "prompt.txt"
 MODEL = "mistral-small-2506"
 
-
+SAVE_SUBTITLES = False
 SAVE_LOGS = True
 LOG_LEVEL = "DEBUG"  # Options: DEBUG, INFO, ERROR, WARNING, CRITICAL

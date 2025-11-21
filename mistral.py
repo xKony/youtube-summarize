@@ -9,10 +9,11 @@ log = get_logger(__name__)
 
 
 # loading prompt from file
-def load_prompt():
+def load_prompt() -> str:
     log.debug("Loading prompt from file...")
     with open(PROMPT_FILE, "r", encoding="utf-8") as f:
         if f is None:
+            log.error("Prompt file not found")
             raise Exception("Prompt file not found")
         return f.read().strip()
 

@@ -16,7 +16,12 @@ async def main():
     )
     log.debug("Requesting response from Mistral model...")
     response = await mistral.get_response()
-    print("Mistral Response:", response.choices[0].message.content)
+    if response is None:
+        log.error("No response received from Mistral model.")
+        return
+    else:
+        log.debug("Received response from Mistral model.")
+        print("Mistral Response:", response.choices[0].message.content)
 
 
 if __name__ == "__main__":
